@@ -1,9 +1,16 @@
 package main
 
 import (
+	"fmt"
+	"os"
 	"strconv"
 )
 
 func main() {
-	strconv.Atoi("255")
+	i, err := strconv.Atoi("255")
+	if err != nil {
+		os.Exit(1)
+	}
+
+	fmt.Println(i)
 }
