@@ -17,6 +17,6 @@ jobs:
       - name: golangci-lint
         uses: reviewdog/action-golangci-lint@v1
         with:
-          workdir: golanci-lint/
+          workdir: golangci-lint/
           github_token: ${{ github.token }}
           filter_mode: nofilter
