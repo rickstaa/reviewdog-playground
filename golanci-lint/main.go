@@ -7,4 +7,6 @@ import (
 func main() {
 	s := []string{}
 	fmt.Println("Hello, playground")
+
+	s := []string{}
 }
