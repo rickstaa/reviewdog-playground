@@ -6,4 +6,4 @@ jobs:
     steps:
       - checkout
       - run: curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh| sh -s -- -b ./bin
-      - run: golangci-lint run -v reviewdog/* | reviewdog -f=golangci-lint -reporter=github-pr-review
+      - run: golangci-lint run -v reviewdog/* | reviewdog -f=golangci-lint -reporter=github-check
