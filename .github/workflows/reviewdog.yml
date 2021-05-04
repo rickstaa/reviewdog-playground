@@ -12,10 +12,10 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v2
         with:
-          go-version: "1.16"
+          go-version: "1.15"
 
       - name: golangci-lint
-        uses: reviewdog/action-golangci-lint@v1
+        uses: reviewdog/action-golangci-lint@v1.17
         with:
           workdir: golangci-lint/
           github_token: ${{ github.token }}
