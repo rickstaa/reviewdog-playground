@@ -1,12 +1,9 @@
 version: 2
 jobs:
-  build:
+  lint:
     docker:
       - image: golang:latest
     steps:
       - checkout
       - run: curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh| sh -s -- -b ./bin
-      - run: go vet ./... 2>&1 | ./bin/reviewdog -f=govet -reporter=github-pr-review
-
-      # Deprecated: prefer GitHub Actions to use github-pr-check reporter.
-      - run: go vet ./... 2>&1 | ./bin/reviewdog -f=govet -reporter=github-pr-check
+      - run: golangci-lint run -v reviewdog/* | reviewdog -f=golangci-lint -reporter=github-pr-review
