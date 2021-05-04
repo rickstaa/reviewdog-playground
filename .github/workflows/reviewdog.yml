@@ -17,6 +17,6 @@ jobs:
       - name: golangci-lint
         uses: reviewdog/action-golangci-lint@v1.20.0
         with:
-          workdir: golangci-lint/
           github_token: ${{ github.token }}
+          golangci_lint_flags: "--config=.github/.golangci.yml ./golangci-lint"
           filter_mode: nofilter
