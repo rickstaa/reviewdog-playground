@@ -19,4 +19,3 @@ jobs:
         with:
           workdir: golangci-lint/
           github_token: ${{ github.token }}
-          filter_mode: nofilter
