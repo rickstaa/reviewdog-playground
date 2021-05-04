@@ -1,12 +1,9 @@
 package main
 
 import (
-	"fmt"
+	"strconv"
 )
 
 func main() {
-	s := []string{}
-	fmt.Println("Hello, playground")
-
-	s := []string{}
+	strconv.Atoi("255")
 }
