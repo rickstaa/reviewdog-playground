@@ -19,3 +19,4 @@ jobs:
         with:
           workdir: golangci-lint/
           github_token: ${{ github.token }}
+          reporter: "github-pr-review"
