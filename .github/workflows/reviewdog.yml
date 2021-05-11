@@ -20,3 +20,4 @@ jobs:
           workdir: golangci-lint/
           github_token: ${{ github.token }}
           reporter: "github-pr-review"
+          fail_on_error: true
