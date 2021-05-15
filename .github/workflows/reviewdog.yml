@@ -11,6 +11,7 @@ jobs:
           workdir: golangci-lint/
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
+          level: warning
           fail_on_error: true
   golangci-lint:
     name: runner / golangci-lint
