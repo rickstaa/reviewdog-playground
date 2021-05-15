@@ -1,6 +1,17 @@
 name: reviewdog
 on: [pull_request]
 jobs:
+  action-template:
+    name: runner / action-template
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: reviewdog/action-template@v1
+        with:
+          workdir: golangci-lint/
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-review
+          fail_on_error: true
   golangci-lint:
     name: runner / golangci-lint
     runs-on: ubuntu-latest
