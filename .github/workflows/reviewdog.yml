@@ -37,3 +37,19 @@ jobs:
           workdir: ansible-lint/
           ansiblelint_flags: "-x core playbook/*"
           fail_on_error: true
+  fix-ansible-lint:
+    name: runner / fix-ansible-lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.6
+      - name: ansible-lint
+        uses: Doarakko/action-ansiblelint@fix-fail-on-error
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-review # Change reporter.
+          workdir: ansible-lint/
+          ansiblelint_flags: "-x core playbook/*"
+          fail_on_error: true
