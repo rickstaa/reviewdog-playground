@@ -35,7 +35,6 @@ jobs:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review # Change reporter.
           workdir: ansible-lint/
-          ansiblelint_flags: "-x core playbook/*"
           fail_on_error: true
   fix-ansible-lint:
     name: runner / fix-ansible-lint
@@ -51,5 +50,4 @@ jobs:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review # Change reporter.
           workdir: ansible-lint/
-          ansiblelint_flags: "-x core playbook/*"
           fail_on_error: true
