@@ -21,3 +21,19 @@ jobs:
           github_token: ${{ github.token }}
           reporter: "github-pr-review"
           fail_on_error: true
+  ansible-lint:
+    name: runner / ansible-lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.6
+      - name: ansible-lint
+        uses: reviewdog/action-ansiblelint@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-review # Change reporter.
+          workdir: ansible-lint/
+          ansiblelint_flags: "-x core playbook/*"
+          fail_on_error: true
