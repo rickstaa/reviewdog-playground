@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: reviewdog/action-template@v1
+      - uses: reviewdog/action-template@master
         with:
           workdir: action-template/
           github_token: ${{ secrets.github_token }}
