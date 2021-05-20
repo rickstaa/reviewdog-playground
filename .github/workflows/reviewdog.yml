@@ -16,3 +16,4 @@ jobs:
           with:
             filter_mode: nofilter
             fail_on_error: true
+            workdir: golangci-lint/
