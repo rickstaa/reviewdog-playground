@@ -8,7 +8,7 @@ jobs:
       - name: Check out code.
         uses: actions/checkout@v1
       - name: misspell
-        uses: Doarakko/action-misspell@master
+        uses: Doarakko/action-misspell@topic/fai-on-error
         with:
           github_token: ${{ secrets.github_token }}
           reporter: "github-pr-review"
