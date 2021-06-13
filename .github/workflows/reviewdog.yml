@@ -8,12 +8,13 @@ jobs:
       - name: Check out code.
         uses: actions/checkout@v1
       - name: misspell
-        uses: reviewdog/action-misspell@master
+        uses: Doarakko/action-misspell@master
         with:
           github_token: ${{ secrets.github_token }}
           reporter: "github-pr-review"
           workdir: misspell/
           locale: "US"
+          fail_on_error: true
   golangci-lint:
     name: runner / golangci-lint
     runs-on: ubuntu-latest
