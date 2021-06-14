@@ -13,24 +13,17 @@ jobs:
           github_token: ${{ secrets.github_token }}
           reporter: "github-pr-review"
           locale: "US"
-          fail_on_error: true
-  golangci-lint:
-    name: runner / golangci-lint
+          fail_on_error: false
+  misspell-fail-on-error:
+    name: runner / misspell
     runs-on: ubuntu-latest
     steps:
-      - name: Check out code into the Go module directory
-        uses: actions/checkout@v2
-
-      # optionally use a specific version of Go rather than the default one
-      - name: Set up Go
-        uses: actions/setup-go@v2
+      - name: Check out code.
+        uses: actions/checkout@v1
+      - name: misspell
+        uses: Doarakko/action-misspell@topic/fai-on-error
         with:
-          go-version: "1.16"
-
-      - name: golangci-lint
-        uses: reviewdog/action-golangci-lint@v1.21.1
-        with:
-          workdir: golangci-lint/
-          github_token: ${{ github.token }}
+          github_token: ${{ secrets.github_token }}
           reporter: "github-pr-review"
+          locale: "US"
           fail_on_error: true
